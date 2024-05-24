@@ -14,8 +14,8 @@ The scripts can generate 3 different types of files for Greenland and Antarctica
 ### area factors 
   af2_ISMIP7_g?_IS_res.nc
 
-All files are produced for the diagnostic grid g1 (ice thickness, SMB, ..) 
-The scripts can also generate files for a staggered grid g0, where e.g. CISM defines horizontal velocities. 
+All files are produced for the diagnostic grid g1 (ice thickness, SMB, ..)  
+The scripts can also generate files for a staggered grid g0, where e.g. CISM defines horizontal velocities.  
   ISMIP7_AIS_multigrid_generator_nc.py  
   ISMIP7_GrIS_multigrid_generator_nc.py  
 
