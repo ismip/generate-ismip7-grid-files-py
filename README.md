@@ -5,7 +5,7 @@ See also [matlab version of scripts](https://github.com/ismip/generate-ismip7-gr
 
 ## Setup
 Needs a python3 environment with  
-numpy, netCDF4, os
+numpy, netCDF4
 
 ## Usage
 The scripts can generate 3 different types of files for Greenland and Antarctica
