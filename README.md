@@ -6,6 +6,7 @@ See also [matlab version of scripts](https://github.com/ismip/generate-ismip7-gr
 Needs a python3 environment with  
 numpy, netCDF4, os
 
+## Usage
 The scripts can generate 3 different types of files for Greenland and Antarctica
 
 ### grid description files (needed for CDO regridding)
