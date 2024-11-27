@@ -53,15 +53,15 @@ def generate_CDO_files(agrid, proj_info, output_data_type, flag_nc, flag_xy, fla
             pass
 
         # write 2D and 1D x,y
-        wnc(xcenters+proj_info['falseeasting']+offsetx, agrid['xyOutputFileName'], 'x2', 'm', 'grid center x-coordinate', ['y', 'x'], 0, 'NETCDF4')
-        wnc(ycenters+proj_info['falsenorthing']+offsety, agrid['xyOutputFileName'], 'y2', 'm', 'grid center y-coordinate', ['y', 'x'], 0, 'NETCDF4')
+        wnc(xcenters+proj_info['falseeasting']+offsetx, agrid['xyOutputFileName'], 'x2', 'm', 'grid center x-coordinate', ['y', 'x'], 0, 'NETCDF4', 'w')
+        wnc(ycenters+proj_info['falsenorthing']+offsety, agrid['xyOutputFileName'], 'y2', 'm', 'grid center y-coordinate', ['y', 'x'], 0, 'NETCDF4', 'a')
         
-        wnc(xcenters[0, :]+proj_info['falseeasting']+offsetx, agrid['xyOutputFileName'], 'x1', 'm', 'grid center x-coordinate', 'x', 0, 'NETCDF4')
-        wnc(ycenters[:, 0]+proj_info['falsenorthing']+offsety, agrid['xyOutputFileName'], 'y1', 'm', 'grid center y-coordinate', 'y', 0, 'NETCDF4')
+        wnc(xcenters[0, :]+proj_info['falseeasting']+offsetx, agrid['xyOutputFileName'], 'x1', 'm', 'grid center x-coordinate', 'x', 0, 'NETCDF4', 'a')
+        wnc(ycenters[:, 0]+proj_info['falsenorthing']+offsety, agrid['xyOutputFileName'], 'y1', 'm', 'grid center y-coordinate', 'y', 0, 'NETCDF4', 'a')
 
         # write bounds
-        wnc(xbounds+proj_info['falseeasting']+offsetx, agrid['xyOutputFileName'], 'x_bnds', 'm', 'grid corner x-coordinate', ['y', 'x', 'nv4'], 0, 'NETCDF4')
-        wnc(ybounds+proj_info['falsenorthing']+offsety, agrid['xyOutputFileName'], 'y_bnds', 'm', 'grid corner y-coordinate', ['y', 'x', 'nv4'], 0, 'NETCDF4')
+        wnc(xbounds+proj_info['falseeasting']+offsetx, agrid['xyOutputFileName'], 'x_bnds', 'm', 'grid corner x-coordinate', ['y', 'x', 'nv4'], 0, 'NETCDF4', 'a')
+        wnc(ybounds+proj_info['falsenorthing']+offsety, agrid['xyOutputFileName'], 'y_bnds', 'm', 'grid corner y-coordinate', ['y', 'x', 'nv4'], 0, 'NETCDF4', 'a')
 
         
     ## Write CDO grid netcdf file
@@ -96,20 +96,20 @@ def generate_CDO_files(agrid, proj_info, output_data_type, flag_nc, flag_xy, fla
             pass
         
         # grid centers
-        wnc(LI_grid_center_lat, agrid['LatLonOutputFileName'], 'lat', 'degrees_north', 'grid center latitude', ['y', 'x'], 0, 'NETCDF4')
+        wnc(LI_grid_center_lat, agrid['LatLonOutputFileName'], 'lat', 'degrees_north', 'grid center latitude', ['y', 'x'], 0, 'NETCDF4', 'w')
         wncatts(agrid['LatLonOutputFileName'],'lat','standard_name', 'latitude')
         wncatts(agrid['LatLonOutputFileName'],'lat','bounds', 'lat_bnds')
         
-        wnc(LI_grid_center_lon, agrid['LatLonOutputFileName'], 'lon', 'degrees_east', 'grid center longitude', ['y', 'x'], 0, 'NETCDF4')
+        wnc(LI_grid_center_lon, agrid['LatLonOutputFileName'], 'lon', 'degrees_east', 'grid center longitude', ['y', 'x'], 0, 'NETCDF4', 'a')
         wncatts(agrid['LatLonOutputFileName'],'lon','standard_name', 'longitude')
         wncatts(agrid['LatLonOutputFileName'],'lon','bounds', 'lon_bnds')
         
         # bounds
-        wnc(LI_grid_corner_lat, agrid['LatLonOutputFileName'], 'lat_bnds', 'degrees_north', 'grid corner latitude', ['y', 'x', 'nv4'], 0, 'NETCDF4')
-        wnc(LI_grid_corner_lon, agrid['LatLonOutputFileName'], 'lon_bnds', 'degrees_east', 'grid corner longitude', ['y', 'x', 'nv4'], 0, 'NETCDF4')
+        wnc(LI_grid_corner_lat, agrid['LatLonOutputFileName'], 'lat_bnds', 'degrees_north', 'grid corner latitude', ['y', 'x', 'nv4'], 0, 'NETCDF4', 'a')
+        wnc(LI_grid_corner_lon, agrid['LatLonOutputFileName'], 'lon_bnds', 'degrees_east', 'grid corner longitude', ['y', 'x', 'nv4'], 0, 'NETCDF4', 'a')
         
         # dummy needed for mapping
-        wnc(np.int8(LI_grid_center_lon*0+1), agrid['LatLonOutputFileName'], 'dummy', '1', 'dummy variable', ['y', 'x'], 0, 'NETCDF4')
+        wnc(np.int8(LI_grid_center_lon*0+1), agrid['LatLonOutputFileName'], 'dummy', '1', 'dummy variable', ['y', 'x'], 0, 'NETCDF4', 'a')
         # add lat,lon mapping
         wncatts(agrid['LatLonOutputFileName'],'dummy', 'coordinates', 'lon lat')
         
@@ -127,7 +127,7 @@ def generate_CDO_files(agrid, proj_info, output_data_type, flag_nc, flag_xy, fla
             pass
         
         # grid centers
-        wnc(LI_grid_center_af2, agrid['af2OutputFileName'], 'af2', 'scale_factor2', 'squared map scale factor', ['y', 'x'], 0, 'NETCDF4')
+        wnc(LI_grid_center_af2, agrid['af2OutputFileName'], 'af2', 'scale_factor2', 'squared map scale factor', ['y', 'x'], 0, 'NETCDF4', 'w')
         
         
     successfully_completed = True

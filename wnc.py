@@ -2,7 +2,7 @@
 import numpy as np
 import netCDF4 as nc
 
-def wnc(var,fname,vname,uname,lname,dnames,add_singleton_time_dim,ncformat):
+def wnc(var,fname,vname,uname,lname,dnames,add_singleton_time_dim,ncformat,mode):
     # Write data from workspace to netCDF file.
     # Syntax:
     # wnc(var,fname,vname,uname,lname,dnames,add_singleton_time_dim,ncformat)
@@ -14,6 +14,7 @@ def wnc(var,fname,vname,uname,lname,dnames,add_singleton_time_dim,ncformat):
     # dnames=names of dimensions
     # add_singleton_time_dim=0/1 to not add/add a singleton time dimension
     # ncformat=netcdf file format
+    # mode=open file for write='w' or append='a'
 
     if np.ndim(var)==1:
         dnames=[dnames]
@@ -50,7 +51,7 @@ def wnc(var,fname,vname,uname,lname,dnames,add_singleton_time_dim,ncformat):
     #print(DimSizes)
     #print(var)
 
-    ncf = nc.Dataset(fname,'a', format=ncformat)
+    ncf = nc.Dataset(fname, mode, format=ncformat)
     dims = []
     for x in ncf.dimensions:
         dims += [x]
