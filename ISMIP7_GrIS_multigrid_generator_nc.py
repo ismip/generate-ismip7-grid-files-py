@@ -9,7 +9,7 @@ def isaninteger(x):
 
 ##### Typically the only part a user needs to modify
 # Specify various ISM grids at different resolution
-rk = [16]
+rk = [5, 1]
 #rk = [16, 8, 4, 2, 1]
 #rk = [0.5]
 

@@ -11,7 +11,7 @@ xfirst = -720000
 yfirst = -3450000
 fname_base = "gdf_ISMIP7_GrIS_"
 
-resolutions = [16000, 8000, 4000, 2000, 1000, 500, 250]
+resolutions = [16000, 8000, 5000, 4000, 2000, 1000, 500, 250]
 
 for resn in resolutions:
 
@@ -30,7 +30,7 @@ for resn in resolutions:
    yfirst_str = f"{yfirst}"
    resn_str = f"{resn}"
    
-   fname = fname_base + res_str;
+   fname = fname_base + res_str + 'm.txt' ;
    
    # Write grid description file
    f = open(fname, "w")

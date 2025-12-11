@@ -1,0 +1,16 @@
+#
+# ISMIP7 grid description file
+# Antarctica EPSG:3031
+#
+gridtype  = projection
+xsize     = 381
+ysize     = 381
+xunits    = "meter"
+yunits    = "meter"
+xfirst    = -3040000
+yfirst    = -3040000
+xinc      = 16000
+yinc      = 16000
+grid_mapping = crs
+grid_mapping_name = polar_stereographic
+proj_params = "+proj=stere +lon_0=0 +lat_ts=71 +lat_0=-90 +x_0=0 +y_0=0"

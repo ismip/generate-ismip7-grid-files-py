@@ -1,0 +1,16 @@
+#
+# ISMIP7 grid description file
+# Greenland EPSG:3413
+#
+gridtype  = projection
+xsize     = 1681
+ysize     = 2881
+xunits    = "meter"
+yunits    = "meter"
+xfirst    = -720000
+yfirst    = -3450000
+xinc      = 1000
+yinc      = 1000
+grid_mapping = crs
+grid_mapping_name = polar_stereographic
+proj_params = "+proj=stere +lon_0=-45 +lat_ts=70 +lat_0=90 +x_0=0 +y_0=0"

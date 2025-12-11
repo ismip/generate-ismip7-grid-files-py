@@ -30,7 +30,7 @@ for resn in resolutions:
    yfirst_str = f"{yfirst}"
    resn_str = f"{resn}"
    
-   fname = fname_base + res_str;
+   fname = fname_base + res_str + 'm.txt' ;
    
    # Write grid description file
    f = open(fname, "w")
