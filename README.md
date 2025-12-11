@@ -39,4 +39,4 @@ Conservative remapping (here from 16 km to 8 km grid)
 remapycon,gdf_.. specifies the output grid  
 -setgrid,gdf_.. specifies the input grid  
 
-   ```cdo -v remapycon,gdf_ISMIP7_AIS_08000 -setgrid,gdf_ISMIP7_AIS_ 16000 lithk_AIS_16000m.nc lithk_AIS_08000m.nc```
+   ```cdo -v remapycon,gdf_ISMIP7_AIS_08000 -setgrid,gdf_ISMIP7_AIS_16000 lithk_AIS_16000m.nc lithk_AIS_08000m.nc```
